@@ -1,2 +1,0 @@
-# qwinto
-Created with CodeSandbox
