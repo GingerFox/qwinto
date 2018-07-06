@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import { Button, Dice } from './Dices.styles';
+import { Button, Dice, DiceSpan } from './Dices.styles';
 
 class Dices extends Component {
   state = {
     dices: [
       {
-        color: 'red',
+        name: 'Red',
+        color: '#f46242',
         value: 0,
         active: true,
       },
       {
-        color: 'purple',
+        name: 'Purple',
+        color: '#af41f4',
         value: 0,
         active: true,
       },
       {
-        color: 'yellow',
+        name: 'Yellow',
+        color: '#f5f76c',
         value: 0,
         active: true,
       },
@@ -51,14 +54,14 @@ class Dices extends Component {
       <div>
         <Button onClick={this.throwDices}>Lancer les dés</Button>
         {dices.map((d, i) => (
-          <Dice color={d.color}>
+          <Dice>
             <input
               name={i}
               type="checkbox"
               checked={d.active}
               onChange={this.toggleActive}
             />
-            {d.color} : {d.value}
+            <DiceSpan color={d.color}>{d.value}</DiceSpan>
           </Dice>
         ))}
         <div>
